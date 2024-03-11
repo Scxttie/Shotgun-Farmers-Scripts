@@ -41,7 +41,7 @@ xhr.setRequestHeader("User-Agent", "UnityPlayer/2019.4.0f1 (UnityWebRequest/1.0,
 xhr.setRequestHeader("Accept", "*/*");
 xhr.setRequestHeader("X-ReportErrorAsSuccess", "true");
 xhr.setRequestHeader("X-PlayFabSDK", "UnitySDK-2.94.200901");
-xhr.setRequestHeader("X-Authorization", "7E08813F1157A9C5-C0ED76AE2BCCDC6C-6BB72E5CCA8CBE12-77EE-8DC4076D3589F1B-udW6zNUAFA9XTNl9+xSdOIi01MZBhcwaKak6IAuJqhw=");
+xhr.setRequestHeader("X-Authorization", "REPLACE THESE WORDS WITH YOUR AUTHORIZATION YOU GOT WITH THE SCRIPT");
 xhr.setRequestHeader("Accept-Encoding", "GZIP");
 xhr.setRequestHeader("X-Unity-Version", "2019.4.0f1");
 xhr.setRequestHeader("Content-Length", "136");
