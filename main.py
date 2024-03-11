@@ -24,14 +24,11 @@ def wait_for_executable(executable_name):
             mitm_thread.start()
             return
         else:
-            # If executable is not found, start it
             print(f"Executable '{executable_name}' is not running. Starting...")
             subprocess.Popen([executable_name])
-            # Wait for a few seconds before checking again
             time.sleep(5)
 
 def run_mitmproxy(executable_name):
-    # Run mitmproxy on localhost:8080 with filtering
     subprocess.Popen(["mitmproxy", "-s", "proxy_script.py", "--listen-host", "127.0.0.1", "--listen-port", "8080", "--view-filter", f"~u {executable_name}"])
 
 # proxy_script.py
@@ -44,13 +41,11 @@ def request(flow: mitmproxy.http.HTTPFlow):
     if "X-Authorization" in flow.request.headers:
         authorization_header = flow.request.headers.get("X-Authorization")
         print("Authorization header found:", authorization_header)
-        # Save authorization header to a file
         save_authorization_header(authorization_header)
 
 def response(flow: mitmproxy.http.HTTPFlow):
     pass
 
 if __name__ == "__main__":
-    # Replace 'Shotgun Farmers' with the name of your executable file displayed in the taskbar
     executable_name = 'Shotgun Farmers.exe'
     wait_for_executable(executable_name)
