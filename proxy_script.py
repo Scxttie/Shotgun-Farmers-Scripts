@@ -7,7 +7,6 @@ def request(flow: mitmproxy.http.HTTPFlow):
     if "X-Authorization" in flow.request.headers:
         authorization_header = flow.request.headers.get("X-Authorization")
         print("Authorization header found:", authorization_header)
-        # Write authorization header to file
         with open("Authorization.txt", "w") as file:
             file.write(authorization_header)
 
